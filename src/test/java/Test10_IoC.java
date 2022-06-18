@@ -1,5 +1,3 @@
-package com.fzg.test;
-
 import com.fzg.controller.MyController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
