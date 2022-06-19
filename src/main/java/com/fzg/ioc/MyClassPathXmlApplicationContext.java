@@ -10,6 +10,7 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.context.MessageSourceResolvable;
 import org.springframework.context.NoSuchMessageException;
 import org.springframework.core.ResolvableType;
@@ -200,6 +201,11 @@ public class MyClassPathXmlApplicationContext implements ApplicationContext {
     }
 
     @Override
+    public <A extends Annotation> A findAnnotationOnBean(String s, Class<A> aClass, boolean b) throws NoSuchBeanDefinitionException {
+        return null;
+    }
+
+    @Override
     public Object getBean(String name) throws BeansException {
         return iocMap.get(name);
     }
@@ -272,6 +278,11 @@ public class MyClassPathXmlApplicationContext implements ApplicationContext {
     @Override
     public String[] getAliases(String name) {
         return new String[0];
+    }
+
+    @Override
+    public void publishEvent(ApplicationEvent event) {
+        ApplicationContext.super.publishEvent(event);
     }
 
     @Override
