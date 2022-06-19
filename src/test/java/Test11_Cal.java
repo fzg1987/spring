@@ -9,5 +9,8 @@ public class Test11_Cal {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-aop.xml");
         Cal cal = context.getBean("calImpl",Cal.class);
         System.out.println(cal.add(10,3));
+        System.out.println(cal.sub(10,3));
+        System.out.println(cal.mul(10,3));
+        System.out.println(cal.div(10,3));
     }
 }
